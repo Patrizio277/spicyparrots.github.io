@@ -181,23 +181,55 @@ onclick="changeDirector('CriBanana','🧠 Responsabile','Ordine nel caos 😎','
 </div>
 
 <script>
+/* ===== CAMBIO DIREZIONE (FIX DEFINITIVO) ===== */
+function changeDirector(name, role, desc, skin) {
+  const box = document.querySelector(".director-display");
+  const skinImg = document.getElementById("director-skin");
+  const nameEl = document.getElementById("director-name");
+  const roleEl = document.getElementById("director-role");
+  const descEl = document.getElementById("director-desc");
+
+  /* sicurezza: se non trova il box, esce */
+  if (!box) return;
+
+  /* reset animazioni */
+  box.classList.remove("fade-in", "fade-out");
+  void box.offsetWidth;
+
+  /* fade out */
+  box.classList.add("fade-out");
+
+  setTimeout(() => {
+    skinImg.src = "https://mc-heads.net/avatar/" + skin + "/128";
+    nameEl.innerText = name;
+    roleEl.innerText = role;
+    descEl.innerText = desc;
+
+    box.classList.remove("fade-out");
+    void box.offsetWidth;
+    box.classList.add("fade-in");
+  }, 650);
+}
+
+/* ===== MODAL MENU ===== */
 function openMenu(title, desc, items){
-  document.getElementById("modal-title").innerText=title;
-  document.getElementById("modal-desc").innerText=desc;
-  const list=document.getElementById("modal-items");
-  list.innerHTML="";
-  items.forEach(i=>{
-    const d=document.createElement("div");
-    d.className="modal-item";
-    d.innerText=i;
+  document.getElementById("modal-title").innerText = title;
+  document.getElementById("modal-desc").innerText = desc;
+
+  const list = document.getElementById("modal-items");
+  list.innerHTML = "";
+
+  items.forEach(item => {
+    const d = document.createElement("div");
+    d.className = "modal-item";
+    d.innerText = item;
     list.appendChild(d);
   });
-  document.getElementById("menu-modal").style.display="flex";
+
+  document.getElementById("menu-modal").style.display = "flex";
 }
+
 function closeMenu(){
-  document.getElementById("menu-modal").style.display="none";
+  document.getElementById("menu-modal").style.display = "none";
 }
 </script>
-
-</body>
-</html>
