@@ -186,16 +186,16 @@ a:hover {
   margin-bottom: 10px;
 }
 
-/* ===== CAMBIO PERSONAGGIO (PIÙ LENTO E FLUIDO) ===== */
+/* ===== CAMBIO PERSONAGGIO (ANCORA PIÙ LENTO) ===== */
 .fade-out {
   opacity: 0;
-  transform: translateY(14px) scale(0.93);
+  transform: translateY(18px) scale(0.92);
 }
 
 .fade-in {
   opacity: 1;
   transform: translateY(0) scale(1);
-  transition: opacity 0.45s ease, transform 0.45s ease;
+  transition: opacity 0.65s ease, transform 0.65s ease;
 }
 
 /* ===== KEYFRAMES ===== */
