@@ -4,48 +4,62 @@ body {
   color: #ffffff;
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
+  overflow-x: hidden;
 }
 
-/* ===== SFONDO SITO (BLUR) ===== */
+/* ===== SFONDO SITO (BLUR SOLO SFONDO) ===== */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   background:
-    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)),
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
     url("images/background.png") no-repeat center center;
   background-size: cover;
   filter: blur(6px);
+  transform: scale(1.15);
+  z-index: -1;
+}
+
+/* ===== INTRO SPLASH (SFONDO + CONTENUTO SEPARATI) ===== */
+#intro {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: introFadeOut 3.5s ease forwards;
+}
+
+/* sfondo intro */
+#intro::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.9)),
+    url("images/background.png") no-repeat center center;
+  background-size: cover;
+  filter: blur(4px);
   transform: scale(1.1);
   z-index: -1;
 }
 
-/* ===== INTRO SPLASH (NUOVO SFONDO) ===== */
-#intro {
-  position: fixed;
-  inset: 0;
-  background:
-    linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
-    url("images/background.png") no-repeat center center;
-  background-size: cover;
-  filter: blur(2px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  animation: introFadeOut 3.5s ease forwards;
+/* contenuto intro */
+.intro-content {
+  text-align: center;
 }
 
 #intro img {
   width: 200px;
-  animation: logoPop 2s ease;
+  animation: logoPop 2.2s ease;
 }
 
 #intro h1 {
   margin-top: 20px;
   color: orange;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
 }
 
 /* ===== CONTENUTO SITO ===== */
@@ -53,8 +67,8 @@ body::before {
   position: relative;
   z-index: 1;
   opacity: 0;
-  animation: siteFadeIn 1.4s ease forwards;
-  animation-delay: 3.2s;
+  animation: siteFadeIn 1.5s ease forwards;
+  animation-delay: 3.1s;
 }
 
 /* ===== HEADER ===== */
@@ -68,10 +82,6 @@ header {
   width: 180px;
 }
 
-h1 {
-  margin: 15px 0 5px;
-}
-
 .slogan {
   font-style: italic;
 }
@@ -80,17 +90,17 @@ h1 {
 h2 {
   margin-bottom: 20px;
   color: #ffb347;
-  text-shadow: 0 0 10px rgba(255,180,70,0.3);
+  text-shadow: 0 0 12px rgba(255,180,70,0.35);
 }
 
 /* ===== SEZIONI ===== */
 .box {
-  background-color: #2a2a2a;
+  background-color: rgba(42,42,42,0.95);
   margin: 30px auto;
-  padding: 20px;
+  padding: 22px;
   max-width: 900px;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  border-radius: 14px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.45);
   animation: fadeUp 1.1s ease both;
 }
 
@@ -108,10 +118,6 @@ a {
   font-weight: bold;
 }
 
-a:hover {
-  text-decoration: underline;
-}
-
 /* ===== SLIDER MENU ===== */
 .menu-slider {
   display: flex;
@@ -126,28 +132,25 @@ a:hover {
   position: relative;
   min-width: 260px;
   background-color: #2a2a2a;
-  border-radius: 12px;
+  border-radius: 14px;
   padding: 15px;
-  text-align: center;
   scroll-snap-align: start;
-  cursor: pointer;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition: transform 0.45s ease, box-shadow 0.45s ease;
 }
 
 .menu-card:hover {
-  transform: translateY(-10px) scale(1.06);
-  box-shadow: 0 0 30px rgba(255,140,0,0.6);
+  transform: translateY(-12px) scale(1.07);
+  box-shadow: 0 0 35px rgba(255,140,0,0.65);
 }
 
 .menu-card::after {
   content: "";
   position: absolute;
   inset: 0;
-  border-radius: 12px;
-  background: radial-gradient(circle at top, rgba(255,140,0,0.35), transparent);
+  border-radius: 14px;
+  background: radial-gradient(circle at top, rgba(255,150,0,0.4), transparent);
   opacity: 0;
   transition: opacity 0.4s;
-  pointer-events: none;
 }
 
 .menu-card:hover::after {
@@ -156,7 +159,7 @@ a:hover {
 
 .menu-card img {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 12px;
   margin-bottom: 10px;
 }
 
@@ -181,15 +184,36 @@ a:hover {
 .director-display img {
   width: 128px;
   image-rendering: pixelated;
-  border-radius: 14px;
-  box-shadow: 0 0 25px rgba(255,140,0,0.6);
-  margin-bottom: 10px;
+  border-radius: 16px;
+  box-shadow: 0 0 30px rgba(255,140,0,0.7);
+  margin-bottom: 12px;
 }
 
-/* ===== CAMBIO PERSONAGGIO (ANCORA PIÙ LENTO) ===== */
+/* ===== TESTE STAFF ===== */
+.staff-selector {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+.staff-selector img {
+  width: 64px;
+  border-radius: 12px;
+  image-rendering: pixelated;
+  cursor: pointer;
+  box-shadow: 0 0 12px rgba(0,0,0,0.6);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.staff-selector img:hover {
+  transform: translateY(-6px) scale(1.18);
+  box-shadow: 0 0 22px rgba(255,150,0,0.85);
+}
+
+/* ===== CAMBIO PERSONAGGIO (FLUIDO E STABILE) ===== */
 .fade-out {
   opacity: 0;
-  transform: translateY(18px) scale(0.92);
+  transform: translateY(20px) scale(0.92);
 }
 
 .fade-in {
@@ -198,7 +222,7 @@ a:hover {
   transition: opacity 0.65s ease, transform 0.65s ease;
 }
 
-/* ===== KEYFRAMES ===== */
+/* ===== ANIMAZIONI ===== */
 @keyframes slideDown {
   from { opacity: 0; transform: translateY(-50px); }
   to { opacity: 1; transform: translateY(0); }
@@ -211,7 +235,7 @@ a:hover {
 
 @keyframes logoPop {
   0% { transform: scale(0.6); opacity: 0; }
-  80% { transform: scale(1.1); opacity: 1; }
+  80% { transform: scale(1.15); opacity: 1; }
   100% { transform: scale(1); }
 }
 
