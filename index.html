@@ -139,15 +139,27 @@
   </div>
 
   <!-- JAVASCRIPT -->
-  <script>
-    function changeDirector(name, role, desc, skin) {
-      document.getElementById("director-name").innerText = name;
-      document.getElementById("director-role").innerText = role;
-      document.getElementById("director-desc").innerText = desc;
-      document.getElementById("director-skin").src =
-        "https://mc-heads.net/avatar/" + skin + "/128";
-    }
-  </script>
+<script>
+  function changeDirector(name, role, desc, skin) {
+    const box = document.querySelector(".director-display");
+    const skinImg = document.getElementById("director-skin");
+    const nameEl = document.getElementById("director-name");
+    const roleEl = document.getElementById("director-role");
+    const descEl = document.getElementById("director-desc");
+
+    box.classList.add("fade-out");
+
+    setTimeout(() => {
+      nameEl.innerText = name;
+      roleEl.innerText = role;
+      descEl.innerText = desc;
+      skinImg.src = "https://mc-heads.net/avatar/" + skin + "/128";
+
+      box.classList.remove("fade-out");
+      box.classList.add("fade-in");
+    }, 250);
+  }
+</script>
 
 </body>
 </html>
