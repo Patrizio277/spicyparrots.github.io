@@ -10,8 +10,11 @@
 
   <!-- INTRO SPLASH -->
   <div id="intro">
-    <img src="images/logo.png" alt="SpicyParrots Logo">
-    <h1>SpicyParrots</h1>
+    <div class="intro-content">
+      <img src="images/logo.png" alt="SpicyParrots Logo">
+      <h1>SpicyParrots</h1>
+      <p class="intro-tagline">Dove il piccante diventa esperienza 🌶️</p>
+    </div>
   </div>
 
   <!-- CONTENUTO SITO -->
@@ -176,37 +179,31 @@
   </div>
 
   <!-- JAVASCRIPT -->
-<script>
-  function changeDirector(name, role, desc, skin) {
-    const box = document.querySelector(".director-display");
-    const skinImg = document.getElementById("director-skin");
-    const nameEl = document.getElementById("director-name");
-    const roleEl = document.getElementById("director-role");
-    const descEl = document.getElementById("director-desc");
+  <script>
+    function changeDirector(name, role, desc, skin) {
+      const box = document.querySelector(".director-display");
+      const skinImg = document.getElementById("director-skin");
+      const nameEl = document.getElementById("director-name");
+      const roleEl = document.getElementById("director-role");
+      const descEl = document.getElementById("director-desc");
 
-    // reset animazioni (IMPORTANTISSIMO)
-    box.classList.remove("fade-in", "fade-out");
-
-    // forza il reflow (trucco anti-bug)
-    void box.offsetWidth;
-
-    // fade out
-    box.classList.add("fade-out");
-
-    setTimeout(() => {
-      // cambio contenuto
-      nameEl.innerText = name;
-      roleEl.innerText = role;
-      descEl.innerText = desc;
-      skinImg.src = "https://mc-heads.net/avatar/" + skin + "/128";
-
-      // reset e fade in
-      box.classList.remove("fade-out");
+      box.classList.remove("fade-in", "fade-out");
       void box.offsetWidth;
-      box.classList.add("fade-in");
-    }, 550);
-  }
-</script>
+
+      box.classList.add("fade-out");
+
+      setTimeout(() => {
+        nameEl.innerText = name;
+        roleEl.innerText = role;
+        descEl.innerText = desc;
+        skinImg.src = "https://mc-heads.net/avatar/" + skin + "/128";
+
+        box.classList.remove("fade-out");
+        void box.offsetWidth;
+        box.classList.add("fade-in");
+      }, 550);
+    }
+  </script>
 
 </body>
 </html>
