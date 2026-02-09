@@ -8,202 +8,196 @@
 </head>
 <body>
 
-  <!-- INTRO SPLASH -->
-  <div id="intro">
-    <div class="intro-content">
-      <img src="images/logo.png" alt="SpicyParrots Logo">
-      <h1>SpicyParrots</h1>
-      <p class="intro-tagline">Dove il piccante diventa esperienza 🌶️</p>
-    </div>
+<!-- INTRO -->
+<div id="intro">
+  <div class="intro-content">
+    <img src="images/logo.png" alt="SpicyParrots Logo">
+    <h1>SpicyParrots</h1>
+    <p class="intro-tagline">Dove il piccante diventa esperienza 🌶️</p>
   </div>
+</div>
 
-  <!-- CONTENUTO SITO -->
-  <div id="site-content">
+<!-- CONTENUTO -->
+<div id="site-content">
 
-    <!-- HEADER PIÙ COMPATTO -->
-    <header>
-      <img src="images/logo.png" alt="SpicyParrots Logo" class="logo">
-      <h1>🔥 SpicyParrots 🔥</h1>
-      <p class="slogan">Il ristorante più piccante di ZeroCraft</p>
-    </header>
+<header>
+  <img src="images/logo.png" class="logo">
+  <h1>🔥 SpicyParrots 🔥</h1>
+  <p class="slogan">Il ristorante più piccante di ZeroCraft</p>
+</header>
 
-    <section class="box">
-      <h2>🌶️ Chi siamo</h2>
-      <p>
-        SpicyParrots nasce su ZeroCraft con un’idea semplice ma potente:
-        trasformare il piccante in un’esperienza.
-        Qui non si mangia soltanto… si affronta il fuoco.
-      </p>
-    </section>
+<section class="box">
+  <h2>🌶️ Chi siamo</h2>
+  <p>
+    SpicyParrots nasce su ZeroCraft per trasformare il piccante in un’esperienza.
+    Qui non si mangia soltanto… si affronta il fuoco.
+  </p>
+</section>
 
-    <!-- TELEGRAM PROFESSIONALE -->
-    <section class="box telegram-box">
-      <h2>📲 Community ufficiale</h2>
-      <p>
-        Eventi, novità, menù segreti e annunci piccanti 🌶️  
-        Entra nella community ufficiale di SpicyParrots.
-      </p>
-      <a href="https://t.me/+gFY7z5cnCHYzMDU0" target="_blank" class="telegram-button">
-        📲 Telegram SpicyParrots
-      </a>
-    </section>
+<section class="box telegram-box">
+  <h2>📲 Community ufficiale</h2>
+  <p>Eventi, novità, menù segreti e annunci piccanti 🌶️</p>
+  <a href="https://t.me/SpicyParrotsNeoTecno" target="_blank" class="telegram-button">
+    📲 Telegram SpicyParrots
+  </a>
+</section>
 
-    <!-- MENU -->
-    <section class="box">
-      <h2>📖 Menù</h2>
+<!-- MENU -->
+<section class="box">
+<h2>📖 Menù</h2>
+<div class="menu-slider">
 
-      <div class="menu-slider">
+<!-- MENU TEMPLATE -->
+<div class="menu-card" onclick="openMenu(
+'🔥 Bocconi dell’Inferno',
+'Un menu brutale pensato per veri amanti del piccante.',
+['64x 💧 Acqua','64x 🌮 Tacos Piccanti']
+)">
+<div class="menu-inner">
+<img src="images/menu/inferno.png">
+<h3>🔥 Bocconi dell’Inferno</h3>
+<p>Ogni morso è una sfida 🌶️🔥</p>
+<span class="price">250$</span>
+</div></div>
 
-        <div class="menu-card">
-          <div class="menu-inner">
-            <img src="images/menu/inferno.png" alt="Bocconi dell’Inferno">
-            <h3>🔥 Bocconi dell’Inferno</h3>
-            <p>Ogni morso è una sfida 🌶️🔥 Brucia… ma vorrai il prossimo.</p>
-            <span class="price">250$</span>
-          </div>
-        </div>
+<div class="menu-card" onclick="openMenu(
+'🌋 Menù Lavico',
+'Caldo, lento e inesorabile come la lava.',
+['64x 💧 Acqua','64x 🍣 Hosomaki a scelta']
+)">
+<div class="menu-inner">
+<img src="images/menu/lavico.png">
+<h3>🌋 Menù Lavico</h3>
+<p>Ti osserva… poi ti travolge.</p>
+<span class="price">300$</span>
+</div></div>
 
-        <div class="menu-card">
-          <div class="menu-inner">
-            <img src="images/menu/lavico.png" alt="Menù Lavico">
-            <h3>🌋 Menù Lavico</h3>
-            <p>Lento come la lava, potente come il fuoco che avanza.</p>
-            <span class="price">300$</span>
-          </div>
-        </div>
+<div class="menu-card" onclick="openMenu(
+'🔥 Hamburger Fiammeggiante',
+'Un hamburger che ha deciso di prendere fuoco.',
+['64x 💧 Acqua','64x 🍔 Hamburger a scelta']
+)">
+<div class="menu-inner">
+<img src="images/menu/hamburger.png">
+<h3>🔥 Hamburger Fiammeggiante</h3>
+<p>Succoso e indimenticabile.</p>
+<span class="price">320$</span>
+</div></div>
 
-        <div class="menu-card">
-          <div class="menu-inner">
-            <img src="images/menu/hamburger.png" alt="Hamburger Fiammeggiante">
-            <h3>🔥 Hamburger Fiammeggiante</h3>
-            <p>Un hamburger che ha deciso di prendere fuoco 🔥🍔</p>
-            <span class="price">320$</span>
-          </div>
-        </div>
+<div class="menu-card" onclick="openMenu(
+'🐉 Costine del Drago',
+'Degne di una leggenda.',
+['64x 💧 Acqua','64x 🍗 Pollo o Carne a scelta']
+)">
+<div class="menu-inner">
+<img src="images/menu/costine.png">
+<h3>🐉 Costine del Drago</h3>
+<p>Tenere, affumicate, letali.</p>
+<span class="price">240$</span>
+</div></div>
 
-        <div class="menu-card">
-          <div class="menu-inner">
-            <img src="images/menu/costine.png" alt="Costine del Drago">
-            <h3>🐉 Costine del Drago</h3>
-            <p>Degne di una leggenda. Tenere, affumicate, letali.</p>
-            <span class="price">240$</span>
-          </div>
-        </div>
+<div class="menu-card" onclick="openMenu(
+'🌋 Zuppa Magma',
+'Una zuppa che scalda corpo e anima.',
+['64x 💧 Acqua','64x 🍜 Ramen']
+)">
+<div class="menu-inner">
+<img src="images/menu/ramen.png">
+<h3>🌋 Zuppa Magma</h3>
+<p>Perfetta dopo ogni avventura.</p>
+<span class="price">260$</span>
+</div></div>
 
-        <div class="menu-card">
-          <div class="menu-inner">
-            <img src="images/menu/ramen.png" alt="Zuppa Magma">
-            <h3>🌋 Zuppa Magma</h3>
-            <p>Scalda corpo e anima dopo ogni avventura 🔥</p>
-            <span class="price">260$</span>
-          </div>
-        </div>
+<div class="menu-card" onclick="openMenu(
+'🔥 Cioccolato Infernale',
+'Dolce… poi arriva il fuoco.',
+['64x 💧 Acqua','64x 🍫 Dolci a scelta']
+)">
+<div class="menu-inner">
+<img src="images/menu/cioccolato.png">
+<h3>🔥 Cioccolato Infernale</h3>
+<p>Non fidarti del primo morso.</p>
+<span class="price">340$</span>
+</div></div>
 
-        <div class="menu-card">
-          <div class="menu-inner">
-            <img src="images/menu/cioccolato.png" alt="Cioccolato Infernale">
-            <h3>🔥 Cioccolato Infernale</h3>
-            <p>Dolce… per pochi secondi 🍫😈</p>
-            <span class="price">340$</span>
-          </div>
-        </div>
+<div class="menu-card" onclick="openMenu(
+'🌶️ Macaron Ingannatori',
+'Sembrano innocenti.',
+['64x 💧 Acqua','64x 🍬 Macaron a scelta']
+)">
+<div class="menu-inner">
+<img src="images/menu/macaron.png">
+<h3>🌶️ Macaron Ingannatori</h3>
+<p>Traditori per natura.</p>
+<span class="price">360$</span>
+</div></div>
 
-        <div class="menu-card">
-          <div class="menu-inner">
-            <img src="images/menu/macaron.png" alt="Macaron Ingannatori">
-            <h3>🌶️ Macaron Ingannatori</h3>
-            <p>Piccoli, carini e pericolosamente traditori.</p>
-            <span class="price">360$</span>
-          </div>
-        </div>
+<div class="menu-card special" onclick="openMenu(
+'⭐ Menù Special',
+'L’esperienza definitiva SpicyParrots.',
+['64x 🧃 Succo a scelta','64x 🌶️ Prodotti Piccanti']
+)">
+<div class="menu-inner">
+<img src="images/menu/special.png">
+<h3>⭐ Menù Special</h3>
+<p>Solo per chi osa davvero.</p>
+<span class="price">540$</span>
+</div></div>
 
-        <div class="menu-card special">
-          <div class="menu-inner">
-            <img src="images/menu/special.png" alt="Menù Special">
-            <h3>⭐ Menù Special</h3>
-            <p>Il massimo dell’esperienza SpicyParrots ⭐🔥</p>
-            <span class="price">540$</span>
-          </div>
-        </div>
+</div>
+</section>
 
-      </div>
-    </section>
+<!-- DIREZIONE (INTOCCATA) -->
+<section class="box">
+<h2>👔 Direzione</h2>
+<div class="director-display fade-in">
+<img id="director-skin" src="https://mc-heads.net/avatar/ziofede82/128">
+<h3 id="director-name">ziofede82</h3>
+<span id="director-role">👑 Direttore</span>
+<p id="director-desc">Visionario del piccante 🌶️🔥</p>
+</div>
 
-    <!-- DIREZIONE -->
-    <section class="box">
-      <h2>👔 Direzione</h2>
+<div class="staff-selector">
+<img src="https://mc-heads.net/avatar/ziofede82/64"
+onclick="changeDirector('ziofede82','👑 Direttore','Visionario del piccante 🌶️🔥','ziofede82')">
+<img src="https://mc-heads.net/avatar/ItzBloxyMilk/64"
+onclick="changeDirector('ItzBloxyMilk','🔥 Vice Direttore','Controlla il fuoco 🔥','ItzBloxyMilk')">
+<img src="https://mc-heads.net/avatar/CriBanana/64"
+onclick="changeDirector('CriBanana','🧠 Responsabile','Ordine nel caos 😎','CriBanana')">
+</div>
+</section>
 
-      <div class="director-display fade-in">
-        <img id="director-skin" src="https://mc-heads.net/avatar/ziofede82/128">
-        <h3 id="director-name">ziofede82</h3>
-        <span id="director-role">👑 Direttore</span>
-        <p id="director-desc">
-          Fondatore di SpicyParrots 🌶️🔥  
-          Visionario del piccante e creatore del caos controllato.
-        </p>
-      </div>
+<footer><p>© 2026 SpicyParrots</p></footer>
+</div>
 
-      <div class="staff-selector">
-
-        <img src="https://mc-heads.net/avatar/ziofede82/64"
-          onclick="changeDirector(
-            'ziofede82',
-            '👑 Direttore',
-            'Fondatore di SpicyParrots 🌶️🔥 Visionario del piccante e creatore del caos controllato. Se un piatto è troppo spicy, troppo folle o troppo buono… è stato approvato da lui.',
-            'ziofede82'
-          )">
-
-        <img src="https://mc-heads.net/avatar/ItzBloxyMilk/64"
-          onclick="changeDirector(
-            'ItzBloxyMilk',
-            '🔥 Vice Direttore',
-            'Il braccio destro del Direttore 🔥🧠 Tiene tutto sotto controllo mentre il fuoco sale. Quando qualcuno esagera… lui evita l’esplosione.',
-            'ItzBloxyMilk'
-          )">
-
-        <img src="https://mc-heads.net/avatar/CriBanana/64"
-          onclick="changeDirector(
-            'CriBanana',
-            '🧠 Responsabile',
-            'La mente fredda dietro al fuoco 🍌😎 Organizzazione, precisione e nervi d’acciaio. Qualcuno deve mettere ordine nel caos.',
-            'CriBanana'
-          )">
-
-      </div>
-    </section>
-
-    <footer>
-      <p>© 2026 SpicyParrots</p>
-    </footer>
-
+<!-- MODAL MENU -->
+<div id="menu-modal" class="menu-modal">
+  <div class="menu-modal-content">
+    <span class="close-modal" onclick="closeMenu()">✖</span>
+    <h2 id="modal-title"></h2>
+    <p id="modal-desc"></p>
+    <div id="modal-items"></div>
   </div>
+</div>
 
-  <!-- JAVASCRIPT -->
-  <script>
-    function changeDirector(name, role, desc, skin) {
-      const box = document.querySelector(".director-display");
-      const skinImg = document.getElementById("director-skin");
-      const nameEl = document.getElementById("director-name");
-      const roleEl = document.getElementById("director-role");
-      const descEl = document.getElementById("director-desc");
-
-      box.classList.remove("fade-in", "fade-out");
-      void box.offsetWidth;
-
-      box.classList.add("fade-out");
-
-      setTimeout(() => {
-        nameEl.innerText = name;
-        roleEl.innerText = role;
-        descEl.innerText = desc;
-        skinImg.src = "https://mc-heads.net/avatar/" + skin + "/128";
-
-        box.classList.remove("fade-out");
-        void box.offsetWidth;
-        box.classList.add("fade-in");
-      }, 650);
-    }
-  </script>
+<script>
+function openMenu(title, desc, items){
+  document.getElementById("modal-title").innerText=title;
+  document.getElementById("modal-desc").innerText=desc;
+  const list=document.getElementById("modal-items");
+  list.innerHTML="";
+  items.forEach(i=>{
+    const d=document.createElement("div");
+    d.className="modal-item";
+    d.innerText=i;
+    list.appendChild(d);
+  });
+  document.getElementById("menu-modal").style.display="flex";
+}
+function closeMenu(){
+  document.getElementById("menu-modal").style.display="none";
+}
+</script>
 
 </body>
 </html>
