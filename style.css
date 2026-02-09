@@ -71,7 +71,7 @@ body::before {
   animation-delay: 3s;
 }
 
-/* ===== HEADER (RIDOTTO E PIÙ ELEGANTE) ===== */
+/* ===== HEADER ===== */
 header {
   padding: 28px 20px;
   background: linear-gradient(180deg, #ff7a00, #c63b00);
@@ -143,6 +143,7 @@ h2 {
 .menu-card {
   min-width: 260px;
   scroll-snap-align: start;
+  cursor: pointer;
 }
 
 .menu-inner {
@@ -219,7 +220,7 @@ h2 {
   box-shadow: 0 0 26px rgba(255,150,0,0.9);
 }
 
-/* ===== CAMBIO PERSONAGGIO (MORBIDO) ===== */
+/* ===== CAMBIO PERSONAGGIO ===== */
 .fade-out {
   opacity: 0;
   transform: translateY(20px) scale(0.94);
@@ -230,6 +231,52 @@ h2 {
   opacity: 1;
   transform: translateY(0) scale(1);
   transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+/* ===== MODAL MENU ===== */
+.menu-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(4px);
+  z-index: 10000;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-modal-content {
+  background: #2a2a2a;
+  border-radius: 18px;
+  padding: 28px;
+  max-width: 420px;
+  width: 90%;
+  box-shadow: 0 30px 70px rgba(0,0,0,0.8);
+  animation: fadeUp 0.4s ease;
+}
+
+.menu-modal-content h2 {
+  margin-top: 0;
+  color: orange;
+}
+
+.menu-modal-content p {
+  color: #ffddb0;
+}
+
+.modal-item {
+  margin-top: 10px;
+  padding: 8px;
+  background: rgba(255,140,0,0.1);
+  border-radius: 10px;
+}
+
+.close-modal {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  cursor: pointer;
+  font-size: 18px;
 }
 
 /* ===== SCROLLBAR MENU ===== */
