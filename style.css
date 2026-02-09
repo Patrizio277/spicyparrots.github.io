@@ -55,4 +55,13 @@ footer {
 .menu-item span {
   color: orange;
 }
+a {
+  color: orange;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
 
