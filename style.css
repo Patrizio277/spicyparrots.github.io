@@ -64,4 +64,23 @@ a {
 a:hover {
   text-decoration: underline;
 }
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #444;
+}
+
+.menu-item span {
+  color: orange;
+  font-weight: bold;
+}
+
+.menu-item.special {
+  background-color: #2f1a00;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
 
