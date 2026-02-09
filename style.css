@@ -211,13 +211,16 @@ h2 {
   border-radius: 14px;
   image-rendering: pixelated;
   cursor: pointer;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
   box-shadow: 0 0 14px rgba(0,0,0,0.6);
+
+  /* FIX */
+  pointer-events: auto;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .staff-selector img:hover {
-  transform: translateY(-6px) scale(1.18);
-  box-shadow: 0 0 26px rgba(255,150,0,0.9);
+  transform: scale(1.12);
+  box-shadow: 0 0 22px rgba(255,150,0,0.85);
 }
 
 /* ===== CAMBIO PERSONAGGIO ===== */
