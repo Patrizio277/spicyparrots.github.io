@@ -7,7 +7,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ===== SFONDO SITO (BLUR SOLO SFONDO) ===== */
+/* ===== SFONDO SITO BLUR ===== */
 body::before {
   content: "";
   position: fixed;
@@ -21,7 +21,7 @@ body::before {
   z-index: -1;
 }
 
-/* ===== INTRO SPLASH (SFONDO + CONTENUTO SEPARATI) ===== */
+/* ===== INTRO ===== */
 #intro {
   position: fixed;
   inset: 0;
@@ -32,37 +32,36 @@ body::before {
   animation: introFadeOut 3.5s ease forwards;
 }
 
-/* sfondo intro */
 #intro::before {
   content: "";
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.9)),
+    linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.9)),
     url("images/background.png") no-repeat center center;
   background-size: cover;
-  filter: blur(4px);
+  filter: blur(3px);
   transform: scale(1.1);
   z-index: -1;
 }
 
-/* contenuto intro */
-.intro-content {
-  text-align: center;
-}
-
-#intro img {
+.intro-content img {
   width: 200px;
   animation: logoPop 2.2s ease;
 }
 
-#intro h1 {
+.intro-content h1 {
   margin-top: 20px;
   color: orange;
   letter-spacing: 3px;
 }
 
-/* ===== CONTENUTO SITO ===== */
+.intro-tagline {
+  opacity: 0.85;
+  margin-top: 8px;
+}
+
+/* ===== SITE CONTENT ===== */
 #site-content {
   position: relative;
   z-index: 1;
@@ -86,13 +85,6 @@ header {
   font-style: italic;
 }
 
-/* ===== TITOLI ===== */
-h2 {
-  margin-bottom: 20px;
-  color: #ffb347;
-  text-shadow: 0 0 12px rgba(255,180,70,0.35);
-}
-
 /* ===== SEZIONI ===== */
 .box {
   background-color: rgba(42,42,42,0.95);
@@ -104,68 +96,59 @@ h2 {
   animation: fadeUp 1.1s ease both;
 }
 
-/* ===== FOOTER ===== */
-footer {
-  padding: 15px;
-  background-color: #111;
-  font-size: 14px;
+/* ===== TITOLI ===== */
+h2 {
+  color: #ffb347;
+  text-shadow: 0 0 12px rgba(255,180,70,0.35);
 }
 
-/* ===== LINK ===== */
-a {
-  color: orange;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-/* ===== SLIDER MENU ===== */
+/* ===== MENU SLIDER ===== */
 .menu-slider {
   display: flex;
-  gap: 20px;
+  gap: 22px;
   overflow-x: auto;
-  padding: 20px 10px;
+  padding: 25px 10px;
   scroll-snap-type: x mandatory;
 }
 
-/* ===== CARD MENU ===== */
+/* ===== MENU CARD PREMIUM ===== */
 .menu-card {
-  position: relative;
   min-width: 260px;
-  background-color: #2a2a2a;
-  border-radius: 14px;
-  padding: 15px;
+  background: rgba(42,42,42,0.96);
+  border-radius: 18px;
+  padding: 16px;
   scroll-snap-align: start;
-  transition: transform 0.45s ease, box-shadow 0.45s ease;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.55);
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+  perspective: 900px;
 }
 
 .menu-card:hover {
-  transform: translateY(-12px) scale(1.07);
-  box-shadow: 0 0 35px rgba(255,140,0,0.65);
-}
-
-.menu-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 14px;
-  background: radial-gradient(circle at top, rgba(255,150,0,0.4), transparent);
-  opacity: 0;
-  transition: opacity 0.4s;
-}
-
-.menu-card:hover::after {
-  opacity: 1;
+  transform: translateY(-14px) rotateX(6deg) rotateY(-6deg);
+  box-shadow:
+    0 30px 60px rgba(0,0,0,0.75),
+    0 0 35px rgba(255,140,0,0.6);
 }
 
 .menu-card img {
   width: 100%;
-  border-radius: 12px;
-  margin-bottom: 10px;
+  border-radius: 14px;
+  margin-bottom: 12px;
 }
 
 .menu-card p {
-  font-size: 14px;
   color: #ffddb0;
+  font-size: 14px;
+}
+
+.price {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: rgba(255,140,0,0.18);
+  color: orange;
+  font-weight: bold;
 }
 
 /* ===== MENU SPECIAL ===== */
@@ -183,13 +166,13 @@ a {
 /* ===== DIREZIONE ===== */
 .director-display img {
   width: 128px;
+  border-radius: 18px;
   image-rendering: pixelated;
-  border-radius: 16px;
-  box-shadow: 0 0 30px rgba(255,140,0,0.7);
+  box-shadow: 0 0 30px rgba(255,140,0,0.75);
   margin-bottom: 12px;
 }
 
-/* ===== TESTE STAFF ===== */
+/* ===== STAFF HEADS ===== */
 .staff-selector {
   display: flex;
   justify-content: center;
@@ -198,28 +181,39 @@ a {
 
 .staff-selector img {
   width: 64px;
-  border-radius: 12px;
+  border-radius: 14px;
   image-rendering: pixelated;
   cursor: pointer;
-  box-shadow: 0 0 12px rgba(0,0,0,0.6);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 0 14px rgba(0,0,0,0.6);
 }
 
 .staff-selector img:hover {
   transform: translateY(-6px) scale(1.18);
-  box-shadow: 0 0 22px rgba(255,150,0,0.85);
+  box-shadow: 0 0 24px rgba(255,150,0,0.9);
 }
 
-/* ===== CAMBIO PERSONAGGIO (FLUIDO E STABILE) ===== */
+/* ===== CAMBIO PERSONAGGIO ===== */
 .fade-out {
   opacity: 0;
-  transform: translateY(20px) scale(0.92);
+  transform: translateY(25px) scale(0.9);
 }
 
 .fade-in {
   opacity: 1;
   transform: translateY(0) scale(1);
   transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+/* ===== SCROLLBAR ARANCIONE ===== */
+.menu-slider::-webkit-scrollbar {
+  height: 10px;
+}
+
+.menu-slider::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ff7a00, #ffb347);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255,140,0,0.6);
 }
 
 /* ===== ANIMAZIONI ===== */
@@ -249,42 +243,9 @@ a {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
 }
-/* ===== MENU PREMIUM STYLE ===== */
-.menu-card {
-  perspective: 900px;
-}
 
-.menu-inner {
-  background: rgba(42,42,42,0.95);
-  border-radius: 16px;
-  padding: 16px;
-  transition:
-    transform 0.6s ease,
-    box-shadow 0.6s ease;
-  box-shadow:
-    0 20px 40px rgba(0,0,0,0.5);
-}
-
-/* hover stile “foto 1” */
-.menu-card:hover .menu-inner {
-  transform: rotateX(6deg) rotateY(-6deg) translateY(-12px);
-  box-shadow:
-    0 30px 60px rgba(0,0,0,0.7),
-    0 0 35px rgba(255,140,0,0.55);
-}
-
-/* prezzo più elegante */
-.menu-inner .price {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 6px 14px;
-  border-radius: 20px;
-  background: rgba(255,140,0,0.15);
-  color: orange;
-  font-weight: bold;
-  transition: transform 0.4s ease;
-}
-
-.menu-card:hover .price {
-  transform: scale(1.1);
+@keyframes pulse {
+  0% { box-shadow: 0 0 10px rgba(255,165,0,0.4); }
+  50% { box-shadow: 0 0 25px rgba(255,165,0,0.9); }
+  100% { box-shadow: 0 0 10px rgba(255,165,0,0.4); }
 }
