@@ -1,13 +1,56 @@
 /* ===== BASE ===== */
 body {
   margin: 0;
-  background: 
-    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.85)),
-    url("images/background.jpg") no-repeat center center fixed;
-  background-size: cover;
   color: #ffffff;
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
+}
+
+/* ===== SFONDO SFOCATO ===== */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)),
+    url("images/background.png") no-repeat center center;
+  background-size: cover;
+  filter: blur(6px);
+  transform: scale(1.1);
+  z-index: -1;
+}
+
+/* ===== INTRO SPLASH ===== */
+#intro {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle, #2b1400, #120800);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: introFadeOut 2.5s ease forwards;
+}
+
+#intro img {
+  width: 200px;
+  animation: logoPop 1.5s ease;
+}
+
+#intro h1 {
+  margin-top: 20px;
+  color: orange;
+  letter-spacing: 2px;
+}
+
+/* ===== CONTENUTO SITO ===== */
+#site-content {
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  animation: siteFadeIn 1s ease forwards;
+  animation-delay: 2.3s;
 }
 
 /* ===== HEADER ===== */
@@ -101,7 +144,6 @@ a:hover {
   box-shadow: 0 0 25px rgba(255,140,0,0.6);
 }
 
-/* LUCE AL PASSAGGIO */
 .menu-card::after {
   content: "";
   position: absolute;
@@ -117,7 +159,6 @@ a:hover {
   opacity: 1;
 }
 
-/* CONTENUTO CARD */
 .menu-card img {
   width: 100%;
   border-radius: 10px;
@@ -171,174 +212,7 @@ a:hover {
   box-shadow: 0 0 30px rgba(0,136,204,0.8);
 }
 
-/* ===== ANIMAZIONI ===== */
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 10px rgba(255,165,0,0.4);
-  }
-  50% {
-    box-shadow: 0 0 25px rgba(255,165,0,0.9);
-  }
-  100% {
-    box-shadow: 0 0 10px rgba(255,165,0,0.4);
-  }
-}
-
-@keyframes popIn {
-  from {
-    opacity: 0;
-    transform: scale(0.7);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-/* ===== INTRO SPLASH ===== */
-#intro {
-  position: fixed;
-  inset: 0;
-  background: radial-gradient(circle, #2b1400, #120800);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  animation: introFadeOut 2.5s ease forwards;
-}
-
-#intro img {
-  width: 200px;
-  animation: logoPop 1.5s ease;
-}
-
-#intro h1 {
-  margin-top: 20px;
-  color: orange;
-  letter-spacing: 2px;
-}
-
-/* NASCONDI SITO ALL’INIZIO */
-#site-content {
-  opacity: 0;
-  animation: siteFadeIn 1s ease forwards;
-  animation-delay: 2.3s;
-}
-
-/* ===== ANIMAZIONI ===== */
-@keyframes logoPop {
-  0% {
-    transform: scale(0.6);
-    opacity: 0;
-  }
-  70% {
-    transform: scale(1.1);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-@keyframes introFadeOut {
-  0% {
-    opacity: 1;
-  }
-  85% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
-@keyframes siteFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-/* ===== DIREZIONE / STAFF ===== */
-.staff-container {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  flex-wrap: wrap;
-}
-
-.staff-card {
-  width: 220px;
-  background-color: #1f1f1f;
-  border-radius: 14px;
-  padding: 15px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.staff-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 0 25px rgba(255,140,0,0.5);
-}
-
-.staff-card img {
-  width: 96px;
-  height: 96px;
-  border-radius: 12px;
-  margin-bottom: 10px;
-  image-rendering: pixelated;
-}
-
-.staff-card h3 {
-  margin: 5px 0;
-}
-
-.role {
-  display: block;
-  font-size: 14px;
-  color: orange;
-  margin-bottom: 8px;
-}
-
-.staff-card p {
-  font-size: 13px;
-  color: #ddd;
-  line-height: 1.4;
-}
-/* ===== DIREZIONE INTERATTIVA ===== */
-.director-display {
-  text-align: center;
-  margin-bottom: 25px;
-}
-
+/* ===== DIREZIONE ===== */
 .director-display img {
   width: 128px;
   image-rendering: pixelated;
@@ -372,24 +246,8 @@ a:hover {
   transform: scale(1.15);
   box-shadow: 0 0 15px rgba(255,165,0,0.7);
 }
-/* ===== SFONDO SFOCATO / BLUR ===== */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background:
-    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)),
-    url("images/background.png") no-repeat center center;
-  background-size: cover;
-  filter: blur(6px);
-  transform: scale(1.1);
-  z-index: -1;
-}
-#site-content {
-  position: relative;
-  z-index: 1;
-}
-/* ANIMAZIONE CAMBIO PERSONAGGIO */
+
+/* ===== ANIMAZIONE CAMBIO PERSONAGGIO ===== */
 .fade-out {
   opacity: 0;
   transform: translateY(10px) scale(0.95);
@@ -400,4 +258,43 @@ body::before {
   opacity: 1;
   transform: translateY(0) scale(1);
   transition: all 0.25s ease;
+}
+
+/* ===== KEYFRAMES ===== */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 10px rgba(255,165,0,0.4); }
+  50% { box-shadow: 0 0 25px rgba(255,165,0,0.9); }
+  100% { box-shadow: 0 0 10px rgba(255,165,0,0.4); }
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.7); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes logoPop {
+  0% { transform: scale(0.6); opacity: 0; }
+  70% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+@keyframes introFadeOut {
+  0% { opacity: 1; }
+  85% { opacity: 1; }
+  100% { opacity: 0; visibility: hidden; }
+}
+
+@keyframes siteFadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
