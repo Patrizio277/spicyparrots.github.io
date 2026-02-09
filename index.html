@@ -157,15 +157,26 @@
     <img src="https://mc-heads.net/avatar/CriBanana_/64"
          onclick="changeDirector('CriBanana_','🧠 Responsabile','Organizzazione, precisione e sangue freddo. Senza caos, tutto funziona 😎','CriBanana_')">
 
-  </div>
-</section>
     <!-- QUI C'È LA DIREZIONE -->
 
     <footer>
       <p>© 2026 SpicyParrots</p>
     </footer>
 
-  </div>
+  </div> <!-- chiude site-content -->
+
+  <script>
+    function changeDirector(name, role, desc, skin) {
+      document.getElementById("director-name").innerText = name;
+      document.getElementById("director-role").innerText = role;
+      document.getElementById("director-desc").innerText = desc;
+      document.getElementById("director-skin").src =
+        "https://mc-heads.net/avatar/" + skin + "/128";
+    }
+  </script>
+
+</body>
+</html>
 
 </body>
 </html>
