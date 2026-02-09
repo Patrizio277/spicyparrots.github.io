@@ -1,3 +1,4 @@
+/* BASE */
 body {
   margin: 0;
   background-color: #1b1b1b;
@@ -6,6 +7,7 @@ body {
   text-align: center;
 }
 
+/* HEADER */
 header {
   padding: 40px 20px;
   background: linear-gradient(180deg, #ff7a00, #b30000);
@@ -23,38 +25,23 @@ h1 {
   font-style: italic;
 }
 
+/* SEZIONI */
 .box {
   background-color: #2a2a2a;
   margin: 30px auto;
   padding: 20px;
-  max-width: 600px;
+  max-width: 900px; /* più largo per lo slider */
   border-radius: 12px;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-li {
-  padding: 8px 0;
-}
-
+/* FOOTER */
 footer {
   padding: 15px;
   background-color: #111;
   font-size: 14px;
 }
-.menu-item {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 0;
-  border-bottom: 1px solid #444;
-}
 
-.menu-item span {
-  color: orange;
-}
+/* LINK */
 a {
   color: orange;
   text-decoration: none;
@@ -64,23 +51,64 @@ a {
 a:hover {
   text-decoration: underline;
 }
-.menu-item {
+
+/* SLIDER MENU */
+.menu-slider {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 0;
-  border-bottom: 1px solid #444;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 20px 10px;
+  scroll-snap-type: x mandatory;
 }
 
-.menu-item span {
-  color: orange;
-  font-weight: bold;
+.menu-slider::-webkit-scrollbar {
+  height: 8px;
 }
 
-.menu-item.special {
-  background-color: #2f1a00;
+.menu-slider::-webkit-scrollbar-thumb {
+  background: orange;
+  border-radius: 10px;
+}
+
+/* CARD MENU */
+.menu-card {
+  min-width: 260px;
+  background-color: #2a2a2a;
+  border-radius: 12px;
   padding: 15px;
-  border-radius: 8px;
-  margin-top: 10px;
+  text-align: center;
+  scroll-snap-align: start;
+  transition: transform 0.3s;
 }
 
+.menu-card:hover {
+  transform: scale(1.05);
+}
+
+.menu-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.menu-card h3 {
+  margin: 10px 0 5px;
+}
+
+.menu-card p {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.price {
+  display: block;
+  margin-top: 8px;
+  font-weight: bold;
+  color: orange;
+}
+
+/* MENU SPECIAL */
+.menu-card.special {
+  border: 2px solid orange;
+  background-color: #2f1a00;
+}
