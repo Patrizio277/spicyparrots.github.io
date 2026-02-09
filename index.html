@@ -20,6 +20,7 @@
   <!-- CONTENUTO SITO -->
   <div id="site-content">
 
+    <!-- HEADER PIÙ COMPATTO -->
     <header>
       <img src="images/logo.png" alt="SpicyParrots Logo" class="logo">
       <h1>🔥 SpicyParrots 🔥</h1>
@@ -35,23 +36,24 @@
       </p>
     </section>
 
+    <!-- TELEGRAM PROFESSIONALE -->
     <section class="box telegram-box">
-      <h2>📲 Entra nella Community</h2>
+      <h2>📲 Community ufficiale</h2>
       <p>
         Eventi, novità, menù segreti e annunci piccanti 🌶️  
-        Entra nel nostro Telegram e resta sempre aggiornato.
+        Entra nella community ufficiale di SpicyParrots.
       </p>
       <a href="https://t.me/+gFY7z5cnCHYzMDU0" target="_blank" class="telegram-button">
-        🚀 Entra nel nostro Telegram
+        🚀 Community SpicyParrots
       </a>
     </section>
 
+    <!-- MENU -->
     <section class="box">
       <h2>📖 Menù</h2>
 
       <div class="menu-slider">
 
-        <!-- MENU ITEM -->
         <div class="menu-card">
           <div class="menu-inner">
             <img src="images/menu/inferno.png" alt="Bocconi dell’Inferno">
@@ -127,46 +129,48 @@
       </div>
     </section>
 
+    <!-- DIREZIONE -->
     <section class="box">
       <h2>👔 Direzione</h2>
 
-      <div class="director-display">
+      <div class="director-display fade-in">
         <img id="director-skin" src="https://mc-heads.net/avatar/ziofede82/128">
         <h3 id="director-name">ziofede82</h3>
         <span id="director-role">👑 Direttore</span>
         <p id="director-desc">
-          Visionario del piccante 🌶️🔥  
-          Se un piatto è troppo spicy… è passato da lui.
+          Fondatore di SpicyParrots 🌶️🔥  
+          Visionario del piccante e creatore del caos controllato.
         </p>
       </div>
 
-<div class="staff-selector">
+      <div class="staff-selector">
 
-  <img src="https://mc-heads.net/avatar/ziofede82/64"
-    onclick="changeDirector(
-      'ziofede82',
-      '👑 Direttore',
-      'Fondatore di SpicyParrots 🌶️🔥 Visionario del piccante e creatore del caos controllato. Se un piatto è troppo spicy, troppo folle o troppo buono… tranquillo: è stato approvato da lui.',
-      'ziofede82'
-    )">
+        <img src="https://mc-heads.net/avatar/ziofede82/64"
+          onclick="changeDirector(
+            'ziofede82',
+            '👑 Direttore',
+            'Fondatore di SpicyParrots 🌶️🔥 Visionario del piccante e creatore del caos controllato. Se un piatto è troppo spicy, troppo folle o troppo buono… è stato approvato da lui.',
+            'ziofede82'
+          )">
 
-  <img src="https://mc-heads.net/avatar/ItzBloxyMilk/64"
-    onclick="changeDirector(
-      'ItzBloxyMilk',
-      '🔥 Vice Direttore',
-      'Il braccio destro del Direttore 🔥🧠 Tiene tutto sotto controllo mentre il fuoco sale. Quando qualcuno esagera con il peperoncino… lui è quello che evita l’esplosione.',
-      'ItzBloxyMilk'
-    )">
+        <img src="https://mc-heads.net/avatar/ItzBloxyMilk/64"
+          onclick="changeDirector(
+            'ItzBloxyMilk',
+            '🔥 Vice Direttore',
+            'Il braccio destro del Direttore 🔥🧠 Tiene tutto sotto controllo mentre il fuoco sale. Quando qualcuno esagera… lui evita l’esplosione.',
+            'ItzBloxyMilk'
+          )">
 
-  <img src="https://mc-heads.net/avatar/CriBanana/64"
-    onclick="changeDirector(
-      'CriBanana',
-      '🧠 Responsabile',
-      'La mente fredda dietro al fuoco 🍌😎 Organizzazione, precisione e nervi d’acciaio. Se SpicyParrots funziona alla perfezione è perché qualcuno mette ordine nel caos.',
-      'CriBanana'
-    )">
+        <img src="https://mc-heads.net/avatar/CriBanana/64"
+          onclick="changeDirector(
+            'CriBanana',
+            '🧠 Responsabile',
+            'La mente fredda dietro al fuoco 🍌😎 Organizzazione, precisione e nervi d’acciaio. Qualcuno deve mettere ordine nel caos.',
+            'CriBanana'
+          )">
 
-</div>
+      </div>
+    </section>
 
     <footer>
       <p>© 2026 SpicyParrots</p>
@@ -197,7 +201,7 @@
         box.classList.remove("fade-out");
         void box.offsetWidth;
         box.classList.add("fade-in");
-      }, 550);
+      }, 650);
     }
   </script>
 
