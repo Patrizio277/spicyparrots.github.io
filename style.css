@@ -389,3 +389,15 @@ body::before {
   position: relative;
   z-index: 1;
 }
+/* ANIMAZIONE CAMBIO PERSONAGGIO */
+.fade-out {
+  opacity: 0;
+  transform: translateY(10px) scale(0.95);
+  transition: all 0.25s ease;
+}
+
+.fade-in {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition: all 0.25s ease;
+}
