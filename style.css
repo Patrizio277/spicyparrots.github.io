@@ -155,3 +155,25 @@ h2 {
 .menu-card:hover::after {
   opacity: 1;
 }
+/* TELEGRAM CALL TO ACTION */
+.telegram-box {
+  background: linear-gradient(180deg, #1e3c72, #2a5298);
+}
+
+.telegram-button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 14px 28px;
+  background-color: #0088cc;
+  color: white;
+  font-size: 16px;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 0 20px rgba(0,136,204,0.5);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.telegram-button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 30px rgba(0,136,204,0.8);
+}
